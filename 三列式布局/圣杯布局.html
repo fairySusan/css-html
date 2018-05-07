@@ -10,9 +10,10 @@
 		}
 		#wrap{
 			background-color: green;
-			padding-left: 210px;/*用于sub的宽度*/
-			padding-right: 190px;/*用于extra的宽度*/
+			padding-left: 210px;/*用于sub的宽度**/
+			padding-right: 190px;/**用于extra的宽度**/
 			border: 2px solid #000;
+			overflow: hidden;
 		}
 		#main{
 			width:100%;
@@ -25,13 +26,13 @@
 			left: -210px;
 			float: left;
 			width: 200px;
-			height: 300px;/*为什么去掉height以后还有高度？*/
+			height: 300px;
 			margin-left: -100%;
 			background-color: yellow;
 		}
 		#extra{
-			position: relative;
-			right: -190px;
+			position: relative; 
+			right: 190px; 
 			float: left;
 			width: 180px;
 			height: 300px;
