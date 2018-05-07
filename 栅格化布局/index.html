@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>栅格化布局</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap.js"></script>
+	<style type="text/css">
+	*{margin:0;padding: 0;}
+	.row1 div{
+			height: 50px;
+			border:1px #999 solid;
+			background-color: #eee;
+		}
+	.row2 div{
+			height: 50px;
+			border:1px #999 solid;
+			background-color: #eee;
+		}
+	.row3 div{
+			height: 50px;
+			border:1px #999 solid;
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row row1">
+			<div class="col-md-4 col-sm-6">四栏</div>
+			<div class="col-md-4 col-sm-6">四栏</div>
+			<div class="col-md-4 col-sm-12">四栏</div>
+		</div>
+		<div class="row row2">
+			<div class="col-md-3 col-sm-12">三栏</div>
+			<div class="col-md-6">六栏</div>
+			<div class="col-md-3">三栏</div>
+		</div>
+		<div class="row row3">
+			<div class="col-md-1 col-sm-2">一栏</div>
+			<div class="col-md-1 col-sm-2">一栏</div>
+			<div class="col-md-2 col-sm-8">两栏</div>
+			<div class="col-md-2 col-sm-3">两栏</div>
+			<div class="col-md-6 col-sm-3">六栏</div>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

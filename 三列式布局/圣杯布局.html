@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圣杯布局</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		body{
+			min-width: 600px;
+		}
+		#wrap{
+			background-color: green;
+			padding-left: 210px;/*用于sub的宽度*/
+			padding-right: 190px;/*用于extra的宽度*/
+			border: 2px solid #000;
+		}
+		#main{
+			width:100%;
+			height: 300px;
+			float: left;
+			background-color: #E86868;
+		}
+		#sub{
+			position:relative;
+			left: -210px;
+			float: left;
+			width: 200px;
+			height: 300px;/*为什么去掉height以后还有高度？*/
+			margin-left: -100%;
+			background-color: yellow;
+		}
+		#extra{
+			position: relative;
+			right: -190px;
+			float: left;
+			width: 180px;
+			height: 300px;
+			margin-left: -180px;/*为了让extra盒子上去*/
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="main">main</div>
+		<div id="sub">sub-box</div> 
+		<div id="extra">extra-box</div> 
+	</div>
+	<!-- <p>1.为什么main盒子float以后，下面两个盒子不上去？</p> -->
+</body>
+</html>

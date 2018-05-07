@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>div高度自动填充</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #wrap{
+            width:500px;
+            height: 400px;
+            margin: 0 auto;
+            border:1px solid blueviolet;
+            position: relative;
+            padding: 50px 0 0;
+           
+        }
+        *{
+            margin:0;
+            padding: 0;
+        }
+        header{
+            background:pink;
+            height: 50px;
+            width: 100%;
+            position:absolute;
+            top: 0;
+        }
+        #content{
+            background: yellowgreen;
+        }
+        #content{
+            width: 100%;
+            height: 100%;
+            /* position: absolute;
+            top: 50px;
+            bottom:0; */
+        }
+    </style>
+</head>
+<body>
+<h2>方法一：
+    <code>
+        <pre>
+            #wrap{position:relative}
+            #content{
+                position:absolute;
+                top:50px;
+                bottom:0;
+            }
+        </pre>
+    </code>
+</h2>
+<h2>
+    方法二：
+    <code>
+        <pre>
+            #wrap{
+                position:relative;
+                padding-top:50px;
+            }   
+            header{
+                position:absolute;
+                top:0;
+                width:100%;//绝对定位以后，具有包裹性。
+            }
+            #content{
+                height:100%;
+            } 
+        </pre>
+    </code>
+</h2>
+    <div id="wrap">
+        <header>
+
+        </header>
+        <div id="content">
+
+        </div>
+    </div>
+</body>
+</html>

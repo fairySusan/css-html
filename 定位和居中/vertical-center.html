@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>垂直居中的六种方法</title>
+	<style type="text/css">
+		/*1.居中图片的方法*/
+		.parent-1{
+			border: 1px solid #999;
+			height: 300px;
+			line-height: 300px;
+		}
+		.parent-1 img{
+			vertical-align: middle;
+		}
+		/*居中图片的方法end*/
+
+		/*2.(tabel+tabel-cell)的方式*/
+		.parent-2{
+			display: table;
+			border: 1px solid #999;
+			height: 100px;
+		}
+		.parent-2 .child{
+			display: table-cell;
+			vertical-align: middle;
+		}
+		/*2.(tabel+tabel-cell)的方式end*/
+
+		/*3.position：absolute;margin设为负，适用于块状元素*/
+		.parent-3{
+			position: relative;
+			height: 300px;
+			width: 400px;
+			border: 1px solid #999;
+		}
+		.parent-3 .child{
+			position: absolute;
+			height: 30%;
+			width: 30%;
+			top: 50%;
+			left: 50%;
+			margin-top: -15%;/*相对于height*/
+			margin-left: -15%;/*相对于width*/
+			background-color: red;
+		}
+		/*3.position：absolute;margin设为负，适用于块状元素end*/
+
+		/*4.position：absolute;vertical stretching 通用*/
+		.parent-4{
+			position: relative;
+			width: 300px;
+			height: 200px;
+			border: 1px solid #999;
+		}
+		.parent-4 .child{
+			position: absolute;
+			background: red;
+			width: 30%;
+			height: 30%;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			margin: auto;
+		}
+		/*5.设置padding上下相等，通用*/
+		.parent-5{
+			width: 300px;
+			height: 200px;
+			padding: 5% 0;
+			border: 1px solid #999;
+		}
+		.parent-5 .child{
+			background: red;
+			height: 30%;
+		}
+		/*6.用一个浮动盒子来垂直居中要居中的盒子*/
+		.parent-6{
+			height: 400px;
+			border: 1px solid #999;
+		}
+		.parent-6 #floater{
+			float: left;
+			height: 50%;
+			width: 100%;
+			margin-bottom: -25px;/*child盒子高度的一半*/
+		}
+		.parent-6 .child{
+			clear: both;
+			height: 50px;
+			width: 100%;
+			background-color: red;
+		}
+		/*7.用css3中的transform:translate(-50%,-50%),有用，绝对定位，不知道width和heigh*/
+		.parent-7{
+			height: 400px;
+			border:1px solid #999;
+			position: relative;
+		}
+		.parent-7 .child{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			width: 500px;
+			height: 200px;
+			background: pink;
+		}
+		/*8.让绝对定位的div居中,知道width和height*/
+		.parent-8{
+			height: 400px;
+			border:1px solid #999;
+			position: relative;
+		}
+		.parent-8 .child{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			width: 500px;
+			height: 200px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<h1>1.单行文本居中，就是line-height</h1>
+	<p>(line-height+vertical-align)还可以用来垂直居中一张图片</p>
+	<div class="parent-1">
+		<img src="01.jpg">
+	</div>
+	<h1>2.(tabel+tabel-cell)的方式,块状行间通用</h1>
+	<p>用来居中文本</p>
+	<div class="parent-2">
+		<div class="child">我是宇宙无敌美少女，呜呜呜呜</div>
+	</div>
+	<div class="parent-2">
+		<div class="child">
+			<div style="background-color: #ff0000;height: 50px;width: 200px"></div>
+		</div>
+	</div>
+	<h1>3.position：absolute;margin设为负，适用于块状元素</h1>
+	<div class="parent-3">
+		<div class="child"></div>
+	</div>
+	<h1>4.position：absolute;vertical stretching 通用</h1>
+	<div class="parent-4">
+		<div class="child"></div>
+	</div>
+	<h1>6.用一个浮动盒子来垂直居中要居中的盒子</h1>
+	<div class="parent-6">
+		<div id="floater"></div>
+		<div class="child"></div>
+	</div>
+	<h1>7.用transform:translate(-50%,-50%)绝对定位，不知道width和height</h1>
+	<div class="parent-7">
+		<div class="child">
+			
+		</div>
+	</div>
+	<h1>8.让绝对定位的div居中，知道width和height，top right left bottom 都等于0，margin:auto</h1>
+	<div class="parent-8">
+		<div class="child">
+			
+		</div>
+	</div>
+</body>
+</html>

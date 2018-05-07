@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图片居中的几种方式</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	/*水平居中的方式*/
+	/*1.给父元素加text-align: center*/
+		.parent{
+			width: 600px;
+			height: 400px;
+			border:2px solid red;
+			/*text-align: center;*/
+		}
+	/*垂直居中的方式*/
+	/*1.给父元素display:table;img套一层div*/
+	/*.parent{
+		display: table;
+	}
+	.tableCell{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+	img{
+		
+	}*/
+	/*2.line-height的方式*/
+	/*.parent{
+		line-height: 400px;
+	}
+	img{
+		vertical-align: middle;
+	}*/
+	/*如果已知img的宽度和高度，可用position+margin来垂直居中*/
+	/*3.position+margin:auto居中方式*/
+	/*.parent{
+		position:relative;
+	}
+	img{
+		position:absolute;
+		top:0;
+		right:0;
+		left:0;
+		bottom:0;
+		margin:auto;
+	}*/
+	/*4.position+transform居中方式*/
+	/*.parent{
+		position:relative;
+	}
+	img{
+		position:absolute;
+		top:50%;
+		right:0;
+		left:50%;
+		bottom:0;
+		transform: translate(-50%,-50%);
+	}*/
+	/*5.flex布局居中*/
+		.parent{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>1.水平居中：直接加text-align:center</h1>
+	<h1>2.垂直水平居中：</h1>
+	<h3>1..parent{line-height:400px;text-align:center;}<br>
+		img{vertical-align:middle;}<br>
+		<span style="color:red;">重点：vertical-align只对非块状元素有效，如果要居中一个块状元素，那么就display：inline-block;</span>
+	</h3>
+	<h3>
+		2.给img加一层div .tableCell <br>
+		.parent{<br>
+		display:table;<br>
+		}<br>
+		.tableCell{<br>
+		display:table-cell;<br>
+		vertical-align:middle;<br>
+		}
+
+	</h3>
+	<h3>3.img{<br>
+		position:absolute;<br>
+		top:0;<br>
+		left:0;<br>
+		right:0;<br>
+		bottom:0;<br>
+		margin:auto;<br>
+	}</h3>
+	<h3>
+		4.img{<br>
+		position:absolute;<br>
+		top:50%;<br>
+		left:50%;<br>
+		transform:translate(-50%,-50%);<br>
+	}
+	</h3>
+	<h3>
+		5..parent{<br>
+		display:flex;<br>
+		flex-direction:row;<br>
+		justify-content: center;//水平居中 <br>
+		align-items: center;//垂直居中 <br>
+	}
+	</h3>
+	<div class="parent">
+		<div class="tableCell">
+			<img src="01.jpg">
+		</div>
+	</div>
+</body>
+</html>
