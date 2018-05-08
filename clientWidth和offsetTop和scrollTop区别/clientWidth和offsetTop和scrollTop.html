@@ -21,7 +21,9 @@
 	</style>
 </head>
 <body>
-	<h1>clientWidth就是指元素的宽，不包含border和margin</h1>
+	<h3>clientWidth就是指元素的内部宽度=content+padding(左右)-滚动条宽度(如果有)，不包含border和margin</h3>
+	<h3>offsetWidth指元素外部宽度=content+padding(左右)+border(左右)</h3>
+	<h3>所以offsetWidth始终比clientWidth要大</h3>
 	<div id="parent">
 	<div id="box">
 		
@@ -32,5 +34,11 @@
 	var box = document.getElementById('box');
 	console.log("clientWidth:",box.clientWidth);
 	console.log("offsetTop:",box.offsetTop);
+	box.onmouseenter =  function(){
+		console.log("xxx")
+	}
+	box.onmouseover = function(){
+		console.log("aaaa")
+	}
 </script>
 </html>
