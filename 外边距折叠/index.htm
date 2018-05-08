@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>外边距折叠</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #p1,#p2{
+            width: 100px;
+            height: 100px;
+        }
+        #p1{
+            margin-bottom:30px;
+        }
+        #p2{
+            margin-top:10px;
+        }
+        #p3{
+            background: chartreuse;
+            width:200px;
+            height:400px;
+            border:none;
+        }
+        #p4{
+            background:cadetblue;
+            margin-top: 20px;
+            height:200px;
+            width: 100px;
+        }
+        #p5{
+            height: 200px;
+        }
+        ol{
+           list-style-position: inside;
+        }
+    </style>
+</head>
+<body>
+    <h4>
+        <ol>
+            <li>相邻的兄弟元素，垂直方向（因为是块级元素，独占一行，只有垂直方向）上的margin会被折叠，也就是会折叠成其中大的那个margin</li>
+            <li>父子元素，给子元素设置margin-top，margin-top会移植到父元素上；给父元素加border或者padding就不会发生margin折叠了</li>
+            <li>详情看MDN：<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing">MDN Mastering_margin_collapsing</a></li>
+        </ol>
+    </h4>
+    <div id="p3">
+        <div id="p4">demo</div>
+    </div>
+</body>
+</html>
