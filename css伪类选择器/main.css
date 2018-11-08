@@ -1,0 +1,18 @@
+span:first-child{
+    color:red;
+}
+span:first-of-type{
+   font-size: 20px;
+}
+p:first-line{
+    color:rgb(0, 81, 255);
+}
+p:first-letter{
+    font-size: 24px;
+}
+span:only-child{
+    border: 2px solid rosybrown;
+}
+span:nth-of-type(3){
+    background: hotpink;
+}
