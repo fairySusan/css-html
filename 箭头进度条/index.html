@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>箭头进度条</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+          
+        }
+        .container{
+            width: 600px;
+            height: 50px;
+            position: relative;
+            margin: 0 auto;
+            background: #071534;
+        }
+        .back-image{
+            background: url('./pic_拨测图形.png') no-repeat;
+            width: 549px;
+            height: 43px;
+        }
+        .progress-image{
+            background: url('./pic_拨测图形.png') no-repeat;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 45px;
+            height: 43px;
+            -webkit-filter: saturate(8000%);
+            filter: saturate(8000%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 打底的背景图片 -->
+        <div class="back-image"></div>
+        <!-- 动的图片 -->
+        <div class="progress-image" id="progress-image"></div>
+    </div>
+</body>
+<script>
+ let iconWidth = 45;
+ let arrowIcon = document.getElementById('progress-image');
+ setInterval(() => {
+     // 549 图片的宽度，每次多显示45px
+    if (iconWidth > 549) {
+        iconWidth = 0;
+      } else {
+        iconWidth += 45;
+      }
+    arrowIcon.style.width = `${iconWidth}px`
+ }, 0.5*1000);
+</script>
+</html>
