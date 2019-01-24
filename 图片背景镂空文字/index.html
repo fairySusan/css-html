@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>图片背景镂空文字</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+        .heavy{
+            font-size: 48px;
+            font-weight: bold;
+        }
+        /* 第二种方法的css */
+        #bg{
+            width: 500px;
+            height: 484px;
+            position: relative;
+            background: url('./1.jpg');
+        }
+        #bg::after{
+            width: 500px;
+            height: 484px;
+            position: absolute;
+            top:0;
+            left: 0;
+            content: '';
+            background: rgba(0, 0, 0, 0.8)
+        }
+        #bg h1{
+            position: absolute;
+            top:0;
+            left: 50%;
+            z-index: 2;
+            font-size: 48px;
+            font-weight: bold;
+            background: url('./1.jpg');
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- 第一种方法： svg遮罩的方法 -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <mask id="myMask">
+            <rect x="300" y="0" width="500" height="485" fill="white"></rect>
+            <text fill="black" x="450" y="80" class="heavy">I ❤ CSS</text>
+        </mask>
+        <image href="./1.jpg" x="300" y="0" width="500" height="485"></image>
+        <rect x="300" y="0" width="500" height="485" fill="black" fill-opacity="0.8" mask="url(#myMask)"></rect>
+    </svg>
+    <!-- 第二种方法css3方法 -->
+    <div id="bg">
+        <h1>I ❤ css</h1>
+    </div>
+    <p>
+        1.重点在于伪元素形成的半透明遮罩，和文字的 -webkit-background-clip: text; color: transparent;属性。
+        2.div有背景图，h1也加载了一次背景图
+    </p>
+</body>
+</html>
