@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>立体按钮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div>
+    <button>Button</button>
+    <div id="shadow">
+
+    </div>
+  </div>
+</body>
+<style>
+  button {
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    padding: 20px 30px;
+    border-radius: 3px;
+    background: linear-gradient(#c2f1e0,#23af7d);
+    text-shadow: 0 1px 1px gray;
+    box-shadow: 0 0.2em 0 #195741, 0 0.2em 0.2em #34bb8e;
+  }
+  button:active  {
+    box-shadow: 0 0.2em 0 #195741, 0 0.2em 0.2em #34bb8e;
+    transform: translate(0, 0.05em);
+  }
+  #shadow {
+    width: 200px;
+    height: 200px;
+    background: #195741;
+    box-shadow: 0 -10px 10px #23af7d;
+  }
+</style>
+</html>
