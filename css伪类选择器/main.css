@@ -16,3 +16,7 @@ span:only-child{
 span:nth-of-type(3){
     background: hotpink;
 }
+/** 巧用伪类添加一些点缀，或标点符号， 使用:not(:last-child)排除最后一个元素*/
+span:not(:last-child):after {
+    content: ',';
+}
