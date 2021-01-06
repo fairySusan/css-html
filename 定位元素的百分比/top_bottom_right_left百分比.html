@@ -26,7 +26,10 @@
 	<h1>position:relative时，top，bottom百分比相对于父元素的高，left，right百分比相对于父元素的宽</h1>
 	<h3>position:relative,依然存在普通文档流之中</h3>
 	<h1>position:absolute时，top，bottom百分比相对于position:relative的父元素的高度，left，right百分比相对于position:relative的父元素的宽度</h1>
-	<h3>是否处于普通文档流不是指是否会遮盖住普通文档流的元素，而是指是否在普通文档流中占据位置，relative的元素设置了top，bottom，right，left后，会偏移，但是原始的位置不会被后面的元素填补，直接就是空着，偏移后的relative元素可能会遮盖普通文档流的内容。absolute和fixed脱离文档流，空出来的位置会被后面的元素填补，不会空着。</h3>
+	<h3>是否处于普通文档流不是指是否会遮盖住普通文档流的元素，而是指是否在普通文档流中占据位置
+		relative的元素设置了top，bottom，right，left后，会偏移
+		但是原始的位置不会被后面的元素填补，直接就是空着，偏移后的relative元素可能会遮盖普通文档流的内容。
+		absolute和fixed脱离文档流，空出来的位置会被后面的元素填补，不会空着。</h3>
 	<div class="parent">
 		<div class="child">
 			

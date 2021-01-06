@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="noContextMenu">这个段落右键菜单, 选中文字已被禁用。</p>
+  <p>但是这个段落没有被禁用。</p>
+</body>
+<script src="main.js"></script>
+<style>
+  #noContextMenu {
+    -webkit-touch-callout:none; /*系统默认菜单被禁用*/
+    -webkit-user-select:none; /*webkit浏览器 禁用选择文字*/
+    -khtml-user-select:none; /*早期浏览器 禁用选择文字*/
+    -moz-user-select:none;/*火狐 禁用选择文字*/
+    -ms-user-select:none; /*IE10 禁用选择文字*/
+    user-select:none;
+  }
+</style>
+</html>
