@@ -1,0 +1,15 @@
+@media only screen and (width: 375px) and (height: 667px) {
+  /*针对大多数iPhone6/ iphone7/ iphone8的标准模式*/
+}
+@media only screen and (width: 414px) and (height: 716px){
+  /*针对大多数iPhone6 plus / iphone7 plus/ iphone8 plus的标准模式*/
+}
+@media only screen and (width: 414px) and (height: 896px) { 
+  /*针对大多数iPhone11的标准模式*/
+}
+/*iPhoneX*/
+@media only screen and (width : 375px) and (height : 812px) { 
+  /*针对大多数iPhoneX的标准模式*/
+}
+/*下面这个站点提供了手机的媒体查询所需要的分辨率*/
+/* https://screensiz.es/ */
